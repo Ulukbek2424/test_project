@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: rgb(204,204,204);
+        }
+        page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+            page-break-after: always;
+            width: 21cm; /* Add this line */
+            height: 29.7cm; /* Add this line */
+            padding-top: 1cm; /* Add this line */
+            box-sizing: border-box; /* Add this line */
+             position: relative; /* Add this line */
+        }
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        @media print {
+            body, page {
+                margin: 0;
+                box-shadow: 0;
+            }
+        }
+
+        .main{
+            width: 210mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: -20mm 0 0 -25mm;
+            position: relative;
+        }
+
+        .breaker{
+            width: 230mm;
+            height: 2px;
+            background-color: aqua;
+            margin-top: 1mm;
+<!--            margin-right: 10mm;-->
+        }
+
+        .innerBreaker{
+            width: 80mm;
+            height: .5mm;
+            background-color: aqua;
+            margin-bottom: 2mm;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: 'row';
+            width: 190mm;
+<!--            justify-content: space-around;-->
+            margin-top: 3mm;
+            justify-content: flex-end;
+        }
+
+        img{
+            width: 35mm;
+            height: 35mm;
+            border: .2mm solid black;
+        }
+
+        span{
+            font-size: 3mm;
+            font-weight: 500;
+        }
+
+        .typeContainer{
+            width: 80mm;
+            display: flex;
+            flex-direction: column;
+            margin: 0 5mm;
+        }
+
+        .coinsContainer{
+            width: 80mm;
+            display: flex;
+            flex-direction: column;
+            margin: 0 3mm;
+            align-self: flex-end;
+        }
+
+        .coinContainer{
+            margin-bottom: 5mm;
+        }
+
+        .typeTitle{
+            font-family: sans-serif;
+            font-size: 4mm;
+            font-weight: 600;
+                margin-bottom: 0mm;
+            margin-top: 3mm;
+        }
+
+        .coinsTypeTitle{
+            font-size: 4mm;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-bottom: 0mm;
+            margin-top: 3mm;
+        }
+
+        .typeName{
+            font-family: sans-serif;
+            font-size: 3mm;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        .offset{
+            margin-left: 4mm;
+        }
+    </style>
+</head>
+<body>
+    <page size="A4">
+        <div class="main">
+            <div class="breaker"></div>
+            <div class="container">
+                <div class="typeContainer">
+                    <p class="typeTitle">{{ title }}</p>
+                    <div class="typeImages">
+                        <img class="typeImg1" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                        <img class="typeImg2" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                    </div>
+                    <p class="typeName">Страна <span>Мальта</span></p>
+                    <p class="typeName">Год начала выпуска <span>2017</span></p>
+                    <p class="typeName">Год конца выпуска <span>2017</span></p>
+                    <p class="typeName">Монетный двор <span>Моннэ де Пари, Париж, Франция</span></p>
+                    <p class="typeName">Материал <span>Биметаллический</span></p>
+                    <p class="typeName">Тираж <span>405000</span></p>
+                </div>
+                <div class="coinsContainer">
+                    <p class="coinsTypeTitle">Мои монеты</p>
+                    <div class="coinContainer">
+                        <div class="innerBreaker"></div>
+                        <div class="typeImages">
+                            <img class="typeImg1" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                            <img class="typeImg2" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                        </div>
+                        <p class="typeName">В коллекции</p>
+                        <p class="typeName offset">Год <span>2017</span></p>
+                        <p class="typeName offset">Монетный двор <span>Париж</span></p>
+                        <p class="typeName offset">Качество <span>XF</span></p>
+                        <p class="typeName offset">Стоимость <span>15usd</span></p>
+                        <p class="typeName offset">Количество <span>8</span></p>
+                    </div>
+                    <div class="coinContainer">
+                        <div class="innerBreaker"></div>
+                        <div class="typeImages">
+                            <img class="typeImg1" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                            <img class="typeImg2" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                        </div>
+                        <p class="typeName">Хочу</p>
+                        <p class="typeName offset">Год <span>2017</span></p>
+                        <p class="typeName offset">Монетный двор <span>Париж</span></p>
+                        <p class="typeName offset">Качество <span>XF</span></p>
+                        <p class="typeName offset">Стоимость <span>15usd</span></p>
+                        <p class="typeName offset">Количество <span>8</span></p>
+                    </div>
+                                  <div class="coinContainer">
+                        <div class="innerBreaker"></div>
+                        <div class="typeImages">
+                            <img class="typeImg1" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                            <img class="typeImg2" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                        </div>
+                        <p class="typeName">Хочу</p>
+                        <p class="typeName offset">Год <span>2017</span></p>
+                        <p class="typeName offset">Монетный двор <span>Париж</span></p>
+                        <p class="typeName offset">Качество <span>XF</span></p>
+                        <p class="typeName offset">Стоимость <span>15usd</span></p>
+                        <p class="typeName offset">Количество <span>8</span></p>
+                    </div>
+                                  <div class="coinContainer">
+                        <div class="innerBreaker"></div>
+                        <div class="typeImages">
+                            <img class="typeImg1" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                            <img class="typeImg2" src="https://www.usmint.gov/wordpress/wp-content/uploads/2022/12/2023-lincoln-penny-uncirculated-obverse-philadelphia.jpg"/>
+                        </div>
+                        <p class="typeName">Хочу</p>
+                        <p class="typeName offset">Год <span>2017</span></p>
+                        <p class="typeName offset">Монетный двор <span>Париж</span></p>
+                        <p class="typeName offset">Качество <span>XF</span></p>
+                        <p class="typeName offset">Стоимость <span>15usd</span></p>
+                        <p class="typeName offset">Количество <span>8</span></p>
+                    </div>
+                </div>
+            </div>
+    </page>
+</body>
+</html>
